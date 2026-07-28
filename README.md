@@ -15,6 +15,11 @@ Notice a bug? Have a feature request? Please let us know!
 * Head over to the **Issues** tab right here on GitHub to file a report. 
 * Your feedback directly helps us make DunOS better with every update.
 
+## Full OS Souce Download
+* Sadly github dont save empty folders
+* so we have a link instead for the source code if anything is missing
+* We gladly able to help you to compile! or wait until an Jar or an EXE Release
+
 ---
 
 *Copyright © DunDunDunPlays Productions Team. All rights reserved.*
