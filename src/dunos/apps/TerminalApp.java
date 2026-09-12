@@ -3,6 +3,7 @@ package dunos.apps;
 import dunos.core.Kernel;
 import dunos.core.Registry;
 import dunos.ui.*;
+import dunos.ui.Window;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -263,7 +264,7 @@ public class TerminalApp {
     }
 
     private void closeTerminal() {
-        Window window = (Window) SwingUtilities.getWindowAncestor(content);
+        dunos.ui.Window window = (dunos.ui.Window) SwingUtilities.getAncestorOfClass(dunos.ui.Window.class, content);
         if (window != null) window.close();
     }
 

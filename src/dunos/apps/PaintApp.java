@@ -1,6 +1,7 @@
 package dunos.apps;
 
 import dunos.ui.*;
+import dunos.ui.Window;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;

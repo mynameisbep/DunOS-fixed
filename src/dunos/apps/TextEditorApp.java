@@ -1,9 +1,11 @@
 package dunos.apps;
 
 import dunos.ui.*;
+import dunos.ui.Window;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import javax.swing.undo.UndoManager;
 import java.io.*;
 
 /**
@@ -13,6 +15,7 @@ public class TextEditorApp {
 
     private JTextArea textArea;
     private File currentFile;
+    private UndoManager undoManager;
     private boolean modified;
     private JLabel statusLabel;
     private JComboBox<String> fontSelector;
@@ -40,8 +43,8 @@ public class TextEditorApp {
         openBtn.addActionListener(e -> openFile());
         saveBtn.addActionListener(e -> saveFile());
         saveAsBtn.addActionListener(e -> saveAsFile());
-        undoBtn.addActionListener(e -> textArea.undo());
-        redoBtn.addActionListener(e -> textArea.redo());
+        undoBtn.addActionListener(e -> { if (undoManager.canUndo()) undoManager.undo(); });
+        redoBtn.addActionListener(e -> { if (undoManager.canRedo()) undoManager.redo(); });
 
         menubar.add(newBtn);
         menubar.add(openBtn);
@@ -71,6 +74,8 @@ public class TextEditorApp {
 
         // Text area with line numbers
         textArea = new JTextArea();
+        undoManager = new UndoManager();
+        textArea.getDocument().addUndoableEditListener(undoManager);
         textArea.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         textArea.setBackground(new Color(32, 32, 32));
         textArea.setForeground(new Color(220, 220, 220));

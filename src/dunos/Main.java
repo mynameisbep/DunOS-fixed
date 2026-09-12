@@ -2,6 +2,11 @@ package dunos;
 
 import dunos.core.*;
 import dunos.ui.*;
+import dunos.ui.Desktop;
+import dunos.ui.SplashScreen;
+import dunos.ui.Window;
+import dunos.ui.BootSequence;
+import dunos.ui.LoginScreen;
 import dunos.system.*;
 import dunos.util.*;
 

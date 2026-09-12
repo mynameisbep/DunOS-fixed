@@ -1,6 +1,7 @@
 package dunos.apps;
 
 import dunos.ui.*;
+import dunos.ui.Window;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -31,7 +32,7 @@ public class WeatherApp {
 
         // Temperature
         JLabel tempLabel = new JLabel("72°F");
-        tempLabel.setFont(new Font("Segoe UI", Font.THIN, 48));
+        tempLabel.setFont(new Font("Segoe UI", Font.PLAIN, 48));
         tempLabel.setForeground(new Color(235, 235, 235));
         gbc.insets = new Insets(0, 0, 5, 0);
         content.add(tempLabel, gbc);

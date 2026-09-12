@@ -1,6 +1,7 @@
 package dunos.ui;
 
 import javax.swing.*;
+import javax.swing.Timer;
 import java.awt.*;
 import java.util.*;
 import java.util.List;

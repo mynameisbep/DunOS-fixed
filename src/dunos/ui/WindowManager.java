@@ -2,6 +2,7 @@ package dunos.ui;
 
 import dunos.core.EventBus;
 import javax.swing.*;
+import javax.swing.Timer;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.util.*;

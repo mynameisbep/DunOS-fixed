@@ -51,7 +51,7 @@ public class LoginScreen extends JWindow {
 
         // Time
         timeLabel = new JLabel("", SwingConstants.CENTER);
-        timeLabel.setFont(new Font("Segoe UI", Font.THIN, 72));
+        timeLabel.setFont(new Font("Segoe UI", Font.PLAIN, 72));
         timeLabel.setForeground(new Color(235, 235, 235));
         mainPanel.add(timeLabel, gbc);
 

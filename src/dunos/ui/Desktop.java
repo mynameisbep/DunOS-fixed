@@ -3,6 +3,7 @@ package dunos.ui;
 import dunos.core.*;
 import dunos.apps.*;
 import javax.swing.*;
+import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;

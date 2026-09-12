@@ -1,6 +1,7 @@
 package dunos.apps;
 
 import dunos.ui.*;
+import dunos.ui.Window;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -38,7 +39,7 @@ public class CalculatorApp {
 
         // Display
         displayLabel = new JLabel("0", SwingConstants.RIGHT);
-        displayLabel.setFont(new Font("Segoe UI", Font.LIGHT, 42));
+        displayLabel.setFont(new Font("Segoe UI", Font.PLAIN, 42));
         displayLabel.setForeground(new Color(235, 235, 235));
         displayLabel.setBorder(BorderFactory.createCompoundBorder(
             BorderFactory.createLineBorder(new Color(50, 50, 50), 1),

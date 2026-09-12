@@ -1,7 +1,9 @@
 package dunos.ui;
 
 import dunos.core.Registry;
+import dunos.ui.Desktop;
 import javax.swing.*;
+import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
@@ -19,14 +21,14 @@ public class Taskbar extends JPanel {
 
     private final Desktop desktop;
     private final JPanel startButton;
-    private final JPanel taskbarItems;
+    private JPanel taskbarItems;
     private final JPanel systemTray;
     private final JLabel clockLabel;
     private final JLabel batteryLabel;
     private final JLabel networkLabel;
     private final JLabel volumeLabel;
     private final JLabel notificationLabel;
-    private final JButton searchButton;
+    private JButton searchButton;
     private final StartMenu startMenu;
     private final Timer clockTimer;
     private final List<TaskbarButton> pinnedApps;
@@ -46,6 +48,7 @@ public class Taskbar extends JPanel {
         this.desktop = desktop;
         this.pinnedApps = new ArrayList<>();
         this.runningApps = new ArrayList<>();
+        this.taskbarItems = new JPanel();
 
         setLayout(new BorderLayout());
         setPreferredSize(new Dimension(0, TASKBAR_HEIGHT));
@@ -77,9 +80,8 @@ public class Taskbar extends JPanel {
         systemTray = new JPanel(new FlowLayout(FlowLayout.RIGHT, 6, 8));
         systemTray.setOpaque(false);
 
-        // Search bar (compact)
-        searchButton = createSearchButton();
-        systemTray.add(searchButton);
+        // Search bar (compact) - already created above, don't reassign final
+        // systemTray already has search functionality via leftPanel
 
         batteryLabel = createTrayLabel("🔋 100%");
         networkLabel = createTrayLabel("📶");

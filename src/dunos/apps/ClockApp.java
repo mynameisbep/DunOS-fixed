@@ -1,6 +1,7 @@
 package dunos.apps;
 
 import dunos.ui.*;
+import dunos.ui.Window;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -31,7 +32,7 @@ public class ClockApp {
 
         // Time
         timeLabel = new JLabel();
-        timeLabel.setFont(new Font("Segoe UI", Font.THIN, 64));
+        timeLabel.setFont(new Font("Segoe UI", Font.PLAIN, 64));
         timeLabel.setForeground(new Color(235, 235, 235));
         content.add(timeLabel, gbc);
 

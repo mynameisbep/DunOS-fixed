@@ -2,7 +2,9 @@ package dunos.apps;
 
 import dunos.system.FileSystemManager;
 import dunos.ui.*;
+import dunos.ui.Window;
 import javax.swing.*;
+import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 import javax.swing.tree.*;
 import javax.swing.table.*;

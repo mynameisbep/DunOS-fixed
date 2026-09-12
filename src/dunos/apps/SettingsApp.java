@@ -2,6 +2,8 @@ package dunos.apps;
 
 import dunos.core.Registry;
 import dunos.ui.*;
+import dunos.ui.Window;
+import dunos.ui.Desktop;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.basic.BasicSliderUI;
