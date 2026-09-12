@@ -1,0 +1,27 @@
+name: Verify Compile
+
+on:
+  push:
+    branches:
+      - "arena/**"
+  workflow_dispatch:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+      - name: Compile
+        run: |
+          rm -rf out
+          mkdir -p out
+          SOURCES=$(find src -name "*.java" | sort)
+          echo "Found $(echo "$SOURCES" | wc -l) source files"
+          javac -d out -sourcepath src $SOURCES
+          echo "Compilation succeeded!"
+          ls -R out | head -n 50
