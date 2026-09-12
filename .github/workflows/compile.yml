@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      issues: write
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 21
@@ -33,32 +32,13 @@ jobs:
           echo "Exit code: $EXIT_CODE"
           cat compile.log
           echo "---END---"
-          cp compile.log full.log
-      - name: Create issue with log
-        if: always()
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          LOG_CONTENT=$(cat full.log)
-          if [ -z "$LOG_CONTENT" ]; then
-            LOG_CONTENT="No errors - compilation succeeded (exit ${{ steps.compile.outputs.exit_code }})"
-          fi
-          # Truncate to 60000 chars for issue body
-          echo "$LOG_CONTENT" | head -c 60000 > /tmp/body.txt
-          echo "" >> /tmp/body.txt
-          echo "Exit code: ${{ steps.compile.outputs.exit_code }}" >> /tmp/body.txt
-          # Create issue via API
-          jq -n --arg body "$(cat /tmp/body.txt)" '{title: "Compile log", body: $body}' > /tmp/issue.json
-          curl -s -X POST -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/mynameisbep/DunOS-fixed/issues -d @/tmp/issue.json > /tmp/issue_resp.json
-          cat /tmp/issue_resp.json
-          ISSUE_NUMBER=$(jq -r .number /tmp/issue_resp.json)
-          echo "ISSUE_NUMBER=$ISSUE_NUMBER" >> $GITHUB_ENV
-          echo "$ISSUE_NUMBER" > ISSUE_NUMBER.txt
-      - name: Save issue number
+          cp compile.log COMPILE_LOG.txt
+          echo "Exit code: $EXIT_CODE" >> COMPILE_LOG.txt
+      - name: Push log
         if: always()
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add ISSUE_NUMBER.txt
-          git commit -m "Update issue number ${{ env.ISSUE_NUMBER }}" || echo "no commit"
+          git add COMPILE_LOG.txt
+          git commit -m "Update compile log exit ${{ steps.compile.outputs.exit_code }}" || echo "no commit"
           git push origin HEAD:${{ github.ref_name }} || echo "push failed"
