@@ -18,26 +18,27 @@ jobs:
           distribution: 'temurin'
       - name: Compile
         run: |
-          set -e
+          set +e
           rm -rf out
           mkdir -p out
           SOURCES=$(find src -name "*.java" | sort)
           echo "Found $(echo "$SOURCES" | wc -l) source files"
-          javac -d out -sourcepath src $SOURCES 2>&1 | tee compile.log || true
-          echo "---- COMPILE LOG ----"
+          javac -d out -sourcepath src $SOURCES > compile.log 2>&1
+          EXIT_CODE=$?
+          echo "Exit code: $EXIT_CODE"
           cat compile.log
-          echo "---- END LOG ----"
-          if [ -s compile.log ] && grep -q "error:" compile.log; then
-            echo "Compilation failed with errors"
-            wc -l compile.log
-            # Count errors
-            grep -c "error:" compile.log || true
-          else
-            echo "Compilation succeeded"
-          fi
-      - name: Upload log
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: compile-log
-          path: compile.log
+          echo "---- COMPILE LOG ----" >> $GITHUB_STEP_SUMMARY
+          cat compile.log >> $GITHUB_STEP_SUMMARY
+          echo "---- END LOG ----" >> $GITHUB_STEP_SUMMARY
+          echo "EXIT_CODE=$EXIT_CODE" >> $GITHUB_STEP_SUMMARY
+          # Save for commit
+          cp compile.log COMPILE_ERRORS.txt || echo "no log" > COMPILE_ERRORS.txt
+          echo "Exit code: $EXIT_CODE" >> COMPILE_ERRORS.txt
+          exit 0
+      - name: Commit errors back
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add COMPILE_ERRORS.txt || true
+          git commit -m "Update compile errors" || echo "no changes"
+          git push origin HEAD:${{ github.ref_name }} || echo "push failed"
