@@ -1,5 +1,6 @@
-
-# DunOS (aka DunDunDunPlaysOS)
+# THIS OS IS SLOP. DO NOT USE THIS.
+---
+## DunOS (aka DunDunDunPlaysOS)
 
 Welcome to **DunOS**! This is the official operating system project by the DunDunDunPlays Productions team. 
 
