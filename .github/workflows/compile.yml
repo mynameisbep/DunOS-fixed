@@ -9,6 +9,9 @@ on:
 jobs:
   compile:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      gists: write
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 21
@@ -17,6 +20,7 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       - name: Compile
+        id: compile
         run: |
           set +e
           rm -rf out
@@ -25,20 +29,40 @@ jobs:
           echo "Found $(echo "$SOURCES" | wc -l) source files"
           javac -d out -sourcepath src $SOURCES > compile.log 2>&1
           EXIT_CODE=$?
+          echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
           echo "Exit code: $EXIT_CODE"
           cat compile.log
-          echo "---- COMPILE LOG ----" >> $GITHUB_STEP_SUMMARY
-          cat compile.log >> $GITHUB_STEP_SUMMARY
-          echo "---- END LOG ----" >> $GITHUB_STEP_SUMMARY
-          echo "EXIT_CODE=$EXIT_CODE" >> $GITHUB_STEP_SUMMARY
-          # Save for commit
-          cp compile.log COMPILE_ERRORS.txt || echo "no log" > COMPILE_ERRORS.txt
-          echo "Exit code: $EXIT_CODE" >> COMPILE_ERRORS.txt
-          exit 0
-      - name: Commit errors back
+          echo "---END---"
+          # Prepare for gist
+          cat compile.log | head -n 500 > /tmp/log.txt
+          echo "Exit: $EXIT_CODE" >> /tmp/log.txt
+          # Also save full log as artifact file for next step
+          cp compile.log full.log
+      - name: Create gist with log
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          LOG_CONTENT=$(cat full.log)
+          if [ -z "$LOG_CONTENT" ]; then
+            LOG_CONTENT="No errors - compilation succeeded"
+          fi
+          # Escape for JSON using jq
+          echo "$LOG_CONTENT" > /tmp/content.txt
+          # Create gist via API
+          jq -n --arg content "$(cat /tmp/content.txt)" '{description: "Compile log", public: false, files: {"compile.log": {content: $content}}}' > /tmp/gist.json
+          curl -s -X POST -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/gists -d @/tmp/gist.json > /tmp/gist_resp.json
+          cat /tmp/gist_resp.json
+          GIST_ID=$(jq -r .id /tmp/gist_resp.json)
+          echo "GIST_ID=$GIST_ID" >> $GITHUB_ENV
+          echo "Gist created: $GIST_ID"
+      - name: Save gist id to file and push
+        if: always()
+        run: |
+          echo "${{ env.GIST_ID }}" > GIST_ID.txt
+          echo "Exit code: ${{ steps.compile.outputs.exit_code }}" >> GIST_ID.txt
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add COMPILE_ERRORS.txt || true
-          git commit -m "Update compile errors" || echo "no changes"
+          git add GIST_ID.txt
+          git commit -m "Update gist id ${{ env.GIST_ID }}" || echo "no commit"
           git push origin HEAD:${{ github.ref_name }} || echo "push failed"
