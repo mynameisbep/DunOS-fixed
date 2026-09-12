@@ -1,0 +1,43 @@
+name: Compile Check
+
+on:
+  push:
+    branches:
+      - "arena/**"
+  workflow_dispatch:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+      - name: Compile
+        run: |
+          set -e
+          rm -rf out
+          mkdir -p out
+          SOURCES=$(find src -name "*.java" | sort)
+          echo "Found $(echo "$SOURCES" | wc -l) source files"
+          javac -d out -sourcepath src $SOURCES 2>&1 | tee compile.log || true
+          echo "---- COMPILE LOG ----"
+          cat compile.log
+          echo "---- END LOG ----"
+          if [ -s compile.log ] && grep -q "error:" compile.log; then
+            echo "Compilation failed with errors"
+            wc -l compile.log
+            # Count errors
+            grep -c "error:" compile.log || true
+          else
+            echo "Compilation succeeded"
+          fi
+      - name: Upload log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compile-log
+          path: compile.log
