@@ -1,0 +1,147 @@
+src/dunos/Main.java:24: error: class, interface, enum, or record expected
+ *   javac -d out src/dunos/**/*.java
+                               ^
+src/dunos/apps/BrowserApp.java:220: error: illegal text block open delimiter sequence, missing line terminator
+            <p style='color:#888;'>URL: """ + url + """</p>
+                                                       ^
+src/dunos/apps/BrowserApp.java:220: error: illegal start of type
+            <p style='color:#888;'>URL: """ + url + """</p>
+                                                        ^
+src/dunos/apps/BrowserApp.java:221: error: > or ',' expected
+            <p style='color:#666;'>Error: """ + error + """</p>
+               ^
+src/dunos/apps/BrowserApp.java:220: error: not a statement
+            <p style='color:#888;'>URL: """ + url + """</p>
+                                                          ^
+src/dunos/apps/BrowserApp.java:221: error: unclosed character literal
+            <p style='color:#666;'>Error: """ + error + """</p>
+                     ^
+src/dunos/apps/BrowserApp.java:221: error: illegal character: '#'
+            <p style='color:#666;'>Error: """ + error + """</p>
+                            ^
+src/dunos/apps/BrowserApp.java:221: error: unclosed character literal
+            <p style='color:#666;'>Error: """ + error + """</p>
+                                 ^
+src/dunos/apps/BrowserApp.java:221: error: <identifier> expected
+            <p style='color:#666;'>Error: """ + error + """</p>
+                                        ^
+src/dunos/apps/BrowserApp.java:221: error: illegal text block open delimiter sequence, missing line terminator
+            <p style='color:#666;'>Error: """ + error + """</p>
+                                              ^
+src/dunos/apps/BrowserApp.java:221: error: <identifier> expected
+            <p style='color:#666;'>Error: """ + error + """</p>
+                                                     ^
+src/dunos/apps/BrowserApp.java:221: error: illegal text block open delimiter sequence, missing line terminator
+            <p style='color:#666;'>Error: """ + error + """</p>
+                                                           ^
+src/dunos/apps/BrowserApp.java:221: error: <identifier> expected
+            <p style='color:#666;'>Error: """ + error + """</p>
+                                                            ^
+src/dunos/apps/BrowserApp.java:221: error: <identifier> expected
+            <p style='color:#666;'>Error: """ + error + """</p>
+                                                              ^
+src/dunos/apps/BrowserApp.java:222: error: illegal start of type
+            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
+               ^
+src/dunos/apps/BrowserApp.java:222: error: > or ',' expected
+            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
+                  ^
+src/dunos/apps/BrowserApp.java:222: error: '(' expected
+            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
+                      ^
+src/dunos/apps/BrowserApp.java:222: error: <identifier> expected
+            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
+                                ^
+src/dunos/apps/BrowserApp.java:222: error: unclosed character literal
+            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
+                                 ^
+src/dunos/apps/BrowserApp.java:222: error: <identifier> expected
+            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
+                                       ^
+src/dunos/apps/BrowserApp.java:222: error: illegal character: '#'
+            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
+                                        ^
+src/dunos/apps/BrowserApp.java:222: error: unclosed character literal
+            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
+                                                ^
+src/dunos/apps/BrowserApp.java:222: error: illegal start of type
+            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
+                                                            ^
+src/dunos/apps/BrowserApp.java:222: error: <identifier> expected
+            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
+                                                              ^
+src/dunos/apps/BrowserApp.java:222: error: <identifier> expected
+            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
+                                                                ^
+src/dunos/apps/BrowserApp.java:222: error: <identifier> expected
+            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
+                                                                  ^
+src/dunos/apps/BrowserApp.java:223: error: <identifier> expected
+            </body></html>
+             ^
+src/dunos/apps/BrowserApp.java:223: error: <identifier> expected
+            </body></html>
+                  ^
+src/dunos/apps/BrowserApp.java:223: error: <identifier> expected
+            </body></html>
+                    ^
+src/dunos/apps/BrowserApp.java:223: error: <identifier> expected
+            </body></html>
+                         ^
+src/dunos/apps/BrowserApp.java:224: error: illegal text block open delimiter sequence, missing line terminator
+            """;
+               ^
+src/dunos/apps/BrowserApp.java:227: error: unnamed classes are a preview feature and are disabled by default.
+    private String getPageTitle(String url) {
+            ^
+  (use --enable-preview to enable unnamed classes)
+src/dunos/apps/BrowserApp.java:273: error: class, interface, enum, or record expected
+}
+^
+src/dunos/apps/BrowserApp.java:1: error: unnamed class should not have package declaration
+package dunos.apps;
+^
+src/dunos/apps/SystemInfoApp.java:52: error: illegal text block open delimiter sequence, missing line terminator
+              Total Memory:   """ + (rt.totalMemory() / (1024 * 1024)) + """ MB
+                                                                             ^
+src/dunos/apps/SystemInfoApp.java:53: error: ';' expected
+              Free Memory:    """ + (rt.freeMemory() / (1024 * 1024)) + """ MB
+                  ^
+src/dunos/apps/SystemInfoApp.java:53: error: illegal text block open delimiter sequence, missing line terminator
+              Free Memory:    """ + (rt.freeMemory() / (1024 * 1024)) + """ MB
+                                  ^
+src/dunos/apps/SystemInfoApp.java:53: error: not a statement
+              Free Memory:    """ + (rt.freeMemory() / (1024 * 1024)) + """ MB
+                                                     ^
+src/dunos/apps/SystemInfoApp.java:53: error: ';' expected
+              Free Memory:    """ + (rt.freeMemory() / (1024 * 1024)) + """ MB
+                                                                    ^
+src/dunos/apps/SystemInfoApp.java:53: error: illegal text block open delimiter sequence, missing line terminator
+              Free Memory:    """ + (rt.freeMemory() / (1024 * 1024)) + """ MB
+                                                                            ^
+src/dunos/apps/SystemInfoApp.java:54: error: ';' expected
+              Max Memory:     """ + (rt.maxMemory() / (1024 * 1024)) + """ MB
+                 ^
+src/dunos/apps/SystemInfoApp.java:54: error: illegal text block open delimiter sequence, missing line terminator
+              Max Memory:     """ + (rt.maxMemory() / (1024 * 1024)) + """ MB
+                                  ^
+src/dunos/apps/SystemInfoApp.java:54: error: not a statement
+              Max Memory:     """ + (rt.maxMemory() / (1024 * 1024)) + """ MB
+                                                    ^
+src/dunos/apps/SystemInfoApp.java:54: error: ';' expected
+              Max Memory:     """ + (rt.maxMemory() / (1024 * 1024)) + """ MB
+                                                                   ^
+src/dunos/apps/SystemInfoApp.java:54: error: illegal text block open delimiter sequence, missing line terminator
+              Max Memory:     """ + (rt.maxMemory() / (1024 * 1024)) + """ MB
+                                                                           ^
+src/dunos/apps/SystemInfoApp.java:56: error: ';' expected
+            Java:
+                ^
+src/dunos/apps/SystemInfoApp.java:57: error: illegal text block open delimiter sequence, missing line terminator
+              Version:        """ + System.getProperty("java.version", "N/A") + """
+                                  ^
+src/dunos/apps/SystemInfoApp.java:64: error: not a statement
+              Working Dir:    """ + System.getProperty("user.dir", "N/A") + """
+                                                                          ^
+48 errors
+Exit code: 1
