@@ -17,7 +17,7 @@ public class SplashScreen extends JWindow {
     private final JLabel subtitleLabel;
     private final JLabel statusLabel;
     private final JProgressBar progressBar;
-    private final Timer fadeTimer;
+    private Timer fadeTimer;
     private float opacity;
     private boolean fadingIn;
     private boolean fadingOut;
@@ -129,7 +129,7 @@ public class SplashScreen extends JWindow {
                 if (opacity <= 0.0f) {
                     opacity = 0.0f;
                     fadingOut = false;
-                    fadeTimer.stop();
+                    ((Timer) e.getSource()).stop();
                     setVisible(false);
                     dispose();
                     if (onFadeOutComplete != null) {
