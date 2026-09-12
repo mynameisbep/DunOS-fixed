@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      issues: write
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 21
@@ -33,7 +34,7 @@ jobs:
           cat compile.log
           echo "---END---"
           cp compile.log full.log
-      - name: Create gist with log
+      - name: Create issue with log
         if: always()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -42,20 +43,22 @@ jobs:
           if [ -z "$LOG_CONTENT" ]; then
             LOG_CONTENT="No errors - compilation succeeded (exit ${{ steps.compile.outputs.exit_code }})"
           fi
-          echo "$LOG_CONTENT" > /tmp/content.txt
-          jq -n --arg content "$(cat /tmp/content.txt)" '{description: "Compile log", public: false, files: {"compile.log": {content: $content}}}' > /tmp/gist.json
-          curl -s -X POST -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/gists -d @/tmp/gist.json > /tmp/gist_resp.json
-          cat /tmp/gist_resp.json
-          GIST_ID=$(jq -r .id /tmp/gist_resp.json)
-          echo "GIST_ID=$GIST_ID" >> $GITHUB_ENV
-          echo "Gist created: $GIST_ID"
-          echo "$GIST_ID" > GIST_ID.txt
-          cat GIST_ID.txt
-      - name: Save gist id to file and push
+          # Truncate to 60000 chars for issue body
+          echo "$LOG_CONTENT" | head -c 60000 > /tmp/body.txt
+          echo "" >> /tmp/body.txt
+          echo "Exit code: ${{ steps.compile.outputs.exit_code }}" >> /tmp/body.txt
+          # Create issue via API
+          jq -n --arg body "$(cat /tmp/body.txt)" '{title: "Compile log", body: $body}' > /tmp/issue.json
+          curl -s -X POST -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/mynameisbep/DunOS-fixed/issues -d @/tmp/issue.json > /tmp/issue_resp.json
+          cat /tmp/issue_resp.json
+          ISSUE_NUMBER=$(jq -r .number /tmp/issue_resp.json)
+          echo "ISSUE_NUMBER=$ISSUE_NUMBER" >> $GITHUB_ENV
+          echo "$ISSUE_NUMBER" > ISSUE_NUMBER.txt
+      - name: Save issue number
         if: always()
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add GIST_ID.txt
-          git commit -m "Update gist id ${{ env.GIST_ID }}" || echo "no commit"
+          git add ISSUE_NUMBER.txt
+          git commit -m "Update issue number ${{ env.ISSUE_NUMBER }}" || echo "no commit"
           git push origin HEAD:${{ github.ref_name }} || echo "push failed"
