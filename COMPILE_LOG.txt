@@ -1,147 +1,318 @@
-src/dunos/Main.java:24: error: class, interface, enum, or record expected
- *   javac -d out src/dunos/**/*.java
-                               ^
-src/dunos/apps/BrowserApp.java:220: error: illegal text block open delimiter sequence, missing line terminator
-            <p style='color:#888;'>URL: """ + url + """</p>
-                                                       ^
-src/dunos/apps/BrowserApp.java:220: error: illegal start of type
-            <p style='color:#888;'>URL: """ + url + """</p>
-                                                        ^
-src/dunos/apps/BrowserApp.java:221: error: > or ',' expected
-            <p style='color:#666;'>Error: """ + error + """</p>
-               ^
-src/dunos/apps/BrowserApp.java:220: error: not a statement
-            <p style='color:#888;'>URL: """ + url + """</p>
-                                                          ^
-src/dunos/apps/BrowserApp.java:221: error: unclosed character literal
-            <p style='color:#666;'>Error: """ + error + """</p>
+src/dunos/Main.java:29: error: reference to SplashScreen is ambiguous
+    private static SplashScreen splash;
+                   ^
+  both class java.awt.SplashScreen in java.awt and class dunos.ui.SplashScreen in dunos.ui match
+src/dunos/Main.java:31: error: reference to Desktop is ambiguous
+    private static Desktop desktop;
+                   ^
+  both class java.awt.Desktop in java.awt and class dunos.ui.Desktop in dunos.ui match
+src/dunos/ui/Taskbar.java:31: error: reference to Timer is ambiguous
+    private final Timer clockTimer;
+                  ^
+  both class java.util.Timer in java.util and class javax.swing.Timer in javax.swing match
+src/dunos/apps/AppStoreApp.java:14: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/BrowserApp.java:31: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/CalculatorApp.java:28: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/CalendarApp.java:19: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/CameraApp.java:14: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/CharacterMapApp.java:14: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/ClockApp.java:19: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/DiskCleanerApp.java:13: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/ExplorerApp.java:41: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/MediaPlayerApp.java:23: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/NetworkCenterApp.java:13: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/NotesApp.java:20: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/PaintApp.java:42: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/SettingsApp.java:20: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/StickyNotesApp.java:13: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/SystemInfoApp.java:13: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/TaskManagerApp.java:22: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/TerminalApp.java:41: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/TextEditorApp.java:21: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/WeatherApp.java:13: error: reference to Window is ambiguous
+    public Window createWindow() {
+           ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/ui/AnimationEngine.java:17: error: reference to Timer is ambiguous
+    private final Timer animationTimer;
+                  ^
+  both class java.util.Timer in java.util and class javax.swing.Timer in javax.swing match
+src/dunos/Main.java:214: error: reference to SplashScreen is ambiguous
+        splash = new SplashScreen();
                      ^
-src/dunos/apps/BrowserApp.java:221: error: illegal character: '#'
-            <p style='color:#666;'>Error: """ + error + """</p>
-                            ^
-src/dunos/apps/BrowserApp.java:221: error: unclosed character literal
-            <p style='color:#666;'>Error: """ + error + """</p>
-                                 ^
-src/dunos/apps/BrowserApp.java:221: error: <identifier> expected
-            <p style='color:#666;'>Error: """ + error + """</p>
-                                        ^
-src/dunos/apps/BrowserApp.java:221: error: illegal text block open delimiter sequence, missing line terminator
-            <p style='color:#666;'>Error: """ + error + """</p>
-                                              ^
-src/dunos/apps/BrowserApp.java:221: error: <identifier> expected
-            <p style='color:#666;'>Error: """ + error + """</p>
-                                                     ^
-src/dunos/apps/BrowserApp.java:221: error: illegal text block open delimiter sequence, missing line terminator
-            <p style='color:#666;'>Error: """ + error + """</p>
-                                                           ^
-src/dunos/apps/BrowserApp.java:221: error: <identifier> expected
-            <p style='color:#666;'>Error: """ + error + """</p>
-                                                            ^
-src/dunos/apps/BrowserApp.java:221: error: <identifier> expected
-            <p style='color:#666;'>Error: """ + error + """</p>
-                                                              ^
-src/dunos/apps/BrowserApp.java:222: error: illegal start of type
-            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
-               ^
-src/dunos/apps/BrowserApp.java:222: error: > or ',' expected
-            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
-                  ^
-src/dunos/apps/BrowserApp.java:222: error: '(' expected
-            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
+  both class java.awt.SplashScreen in java.awt and class dunos.ui.SplashScreen in dunos.ui match
+src/dunos/Main.java:346: error: reference to Desktop is ambiguous
+        desktop = new Desktop();
                       ^
-src/dunos/apps/BrowserApp.java:222: error: <identifier> expected
-            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
-                                ^
-src/dunos/apps/BrowserApp.java:222: error: unclosed character literal
-            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
-                                 ^
-src/dunos/apps/BrowserApp.java:222: error: <identifier> expected
-            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
-                                       ^
-src/dunos/apps/BrowserApp.java:222: error: illegal character: '#'
-            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
-                                        ^
-src/dunos/apps/BrowserApp.java:222: error: unclosed character literal
-            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
-                                                ^
-src/dunos/apps/BrowserApp.java:222: error: illegal start of type
-            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
-                                                            ^
-src/dunos/apps/BrowserApp.java:222: error: <identifier> expected
-            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
-                                                              ^
-src/dunos/apps/BrowserApp.java:222: error: <identifier> expected
-            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
-                                                                ^
-src/dunos/apps/BrowserApp.java:222: error: <identifier> expected
-            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
-                                                                  ^
-src/dunos/apps/BrowserApp.java:223: error: <identifier> expected
-            </body></html>
-             ^
-src/dunos/apps/BrowserApp.java:223: error: <identifier> expected
-            </body></html>
-                  ^
-src/dunos/apps/BrowserApp.java:223: error: <identifier> expected
-            </body></html>
-                    ^
-src/dunos/apps/BrowserApp.java:223: error: <identifier> expected
-            </body></html>
+  both class java.awt.Desktop in java.awt and class dunos.ui.Desktop in dunos.ui match
+src/dunos/ui/LoginScreen.java:54: error: cannot find symbol
+        timeLabel.setFont(new Font("Segoe UI", Font.THIN, 72));
+                                                   ^
+  symbol:   variable THIN
+  location: class Font
+src/dunos/ui/Taskbar.java:99: error: reference to Timer is ambiguous
+        clockTimer = new Timer(1000, e -> {
                          ^
-src/dunos/apps/BrowserApp.java:224: error: illegal text block open delimiter sequence, missing line terminator
-            """;
-               ^
-src/dunos/apps/BrowserApp.java:227: error: unnamed classes are a preview feature and are disabled by default.
-    private String getPageTitle(String url) {
-            ^
-  (use --enable-preview to enable unnamed classes)
-src/dunos/apps/BrowserApp.java:273: error: class, interface, enum, or record expected
-}
-^
-src/dunos/apps/BrowserApp.java:1: error: unnamed class should not have package declaration
-package dunos.apps;
-^
-src/dunos/apps/SystemInfoApp.java:52: error: illegal text block open delimiter sequence, missing line terminator
-              Total Memory:   """ + (rt.totalMemory() / (1024 * 1024)) + """ MB
-                                                                             ^
-src/dunos/apps/SystemInfoApp.java:53: error: ';' expected
-              Free Memory:    """ + (rt.freeMemory() / (1024 * 1024)) + """ MB
-                  ^
-src/dunos/apps/SystemInfoApp.java:53: error: illegal text block open delimiter sequence, missing line terminator
-              Free Memory:    """ + (rt.freeMemory() / (1024 * 1024)) + """ MB
+  both class java.util.Timer in java.util and class javax.swing.Timer in javax.swing match
+src/dunos/apps/AppStoreApp.java:15: error: reference to Window is ambiguous
+        Window window = new Window("App Store", "appstore", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/AppStoreApp.java:15: error: reference to Window is ambiguous
+        Window window = new Window("App Store", "appstore", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/BrowserApp.java:32: error: reference to Window is ambiguous
+        Window window = new Window("Browser", "browser", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/BrowserApp.java:32: error: reference to Window is ambiguous
+        Window window = new Window("Browser", "browser", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/CalculatorApp.java:29: error: reference to Window is ambiguous
+        Window window = new Window("Calculator", "calculator", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/CalculatorApp.java:29: error: reference to Window is ambiguous
+        Window window = new Window("Calculator", "calculator", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/CalculatorApp.java:41: error: cannot find symbol
+        displayLabel.setFont(new Font("Segoe UI", Font.LIGHT, 42));
+                                                      ^
+  symbol:   variable LIGHT
+  location: class Font
+src/dunos/apps/CalendarApp.java:20: error: reference to Window is ambiguous
+        Window window = new Window("Calendar", "calendar", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/CalendarApp.java:20: error: reference to Window is ambiguous
+        Window window = new Window("Calendar", "calendar", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/CameraApp.java:15: error: reference to Window is ambiguous
+        Window window = new Window("Camera", "camera", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/CameraApp.java:15: error: reference to Window is ambiguous
+        Window window = new Window("Camera", "camera", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/CharacterMapApp.java:15: error: reference to Window is ambiguous
+        Window window = new Window("Character Map", "charactermap", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/CharacterMapApp.java:15: error: reference to Window is ambiguous
+        Window window = new Window("Character Map", "charactermap", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/ClockApp.java:20: error: reference to Window is ambiguous
+        Window window = new Window("Clock", "clock", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/ClockApp.java:20: error: reference to Window is ambiguous
+        Window window = new Window("Clock", "clock", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/ClockApp.java:34: error: cannot find symbol
+        timeLabel.setFont(new Font("Segoe UI", Font.THIN, 64));
+                                                   ^
+  symbol:   variable THIN
+  location: class Font
+src/dunos/apps/DiskCleanerApp.java:14: error: reference to Window is ambiguous
+        Window window = new Window("Disk Cleaner", "diskcleaner", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/DiskCleanerApp.java:14: error: reference to Window is ambiguous
+        Window window = new Window("Disk Cleaner", "diskcleaner", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/ExplorerApp.java:42: error: reference to Window is ambiguous
+        Window window = new Window("File Explorer", "explorer", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/ExplorerApp.java:42: error: reference to Window is ambiguous
+        Window window = new Window("File Explorer", "explorer", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/MediaPlayerApp.java:24: error: reference to Window is ambiguous
+        Window window = new Window("Media Player", "mediaplayer", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/MediaPlayerApp.java:24: error: reference to Window is ambiguous
+        Window window = new Window("Media Player", "mediaplayer", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/NetworkCenterApp.java:14: error: reference to Window is ambiguous
+        Window window = new Window("Network Center", "networkcenter", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/NetworkCenterApp.java:14: error: reference to Window is ambiguous
+        Window window = new Window("Network Center", "networkcenter", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/NotesApp.java:21: error: reference to Window is ambiguous
+        Window window = new Window("Notes", "notes", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/NotesApp.java:21: error: reference to Window is ambiguous
+        Window window = new Window("Notes", "notes", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/PaintApp.java:43: error: reference to Window is ambiguous
+        Window window = new Window("Paint", "paint", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/PaintApp.java:43: error: reference to Window is ambiguous
+        Window window = new Window("Paint", "paint", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/SettingsApp.java:21: error: reference to Window is ambiguous
+        Window window = new Window("Settings", "settings", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/SettingsApp.java:21: error: reference to Window is ambiguous
+        Window window = new Window("Settings", "settings", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/SettingsApp.java:372: error: reference to Desktop is ambiguous
+        panel.add(createButton("🧹 Run Disk Cleaner", e -> Desktop.AppLauncher.launch("diskcleaner")), gbc);
+                                                           ^
+  both class java.awt.Desktop in java.awt and class dunos.ui.Desktop in dunos.ui match
+src/dunos/apps/StickyNotesApp.java:14: error: reference to Window is ambiguous
+        Window window = new Window("Sticky Notes", "stickynotes", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/StickyNotesApp.java:14: error: reference to Window is ambiguous
+        Window window = new Window("Sticky Notes", "stickynotes", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/SystemInfoApp.java:14: error: reference to Window is ambiguous
+        Window window = new Window("System Information", "systeminfo", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/SystemInfoApp.java:14: error: reference to Window is ambiguous
+        Window window = new Window("System Information", "systeminfo", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/TaskManagerApp.java:23: error: reference to Window is ambiguous
+        Window window = new Window("Task Manager", "taskmanager", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/TaskManagerApp.java:23: error: reference to Window is ambiguous
+        Window window = new Window("Task Manager", "taskmanager", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/TerminalApp.java:42: error: reference to Window is ambiguous
+        Window window = new Window("Terminal", "terminal", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/TerminalApp.java:42: error: reference to Window is ambiguous
+        Window window = new Window("Terminal", "terminal", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/TerminalApp.java:266: error: reference to Window is ambiguous
+        Window window = (Window) SwingUtilities.getWindowAncestor(content);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/TerminalApp.java:266: error: reference to Window is ambiguous
+        Window window = (Window) SwingUtilities.getWindowAncestor(content);
+                         ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/TextEditorApp.java:22: error: reference to Window is ambiguous
+        Window window = new Window("Text Editor", "texteditor", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/TextEditorApp.java:22: error: reference to Window is ambiguous
+        Window window = new Window("Text Editor", "texteditor", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/TextEditorApp.java:43: error: cannot find symbol
+        undoBtn.addActionListener(e -> textArea.undo());
+                                               ^
+  symbol:   method undo()
+  location: variable textArea of type JTextArea
+src/dunos/apps/TextEditorApp.java:44: error: cannot find symbol
+        redoBtn.addActionListener(e -> textArea.redo());
+                                               ^
+  symbol:   method redo()
+  location: variable textArea of type JTextArea
+src/dunos/apps/WeatherApp.java:14: error: reference to Window is ambiguous
+        Window window = new Window("Weather", "weather", null);
+        ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/WeatherApp.java:14: error: reference to Window is ambiguous
+        Window window = new Window("Weather", "weather", null);
+                            ^
+  both class java.awt.Window in java.awt and class dunos.ui.Window in dunos.ui match
+src/dunos/apps/WeatherApp.java:34: error: cannot find symbol
+        tempLabel.setFont(new Font("Segoe UI", Font.THIN, 48));
+                                                   ^
+  symbol:   variable THIN
+  location: class Font
+src/dunos/ui/AnimationEngine.java:212: error: reference to Timer is ambiguous
+        this.animationTimer = new Timer(16, e -> updateAnimations()); // ~60 FPS
                                   ^
-src/dunos/apps/SystemInfoApp.java:53: error: not a statement
-              Free Memory:    """ + (rt.freeMemory() / (1024 * 1024)) + """ MB
-                                                     ^
-src/dunos/apps/SystemInfoApp.java:53: error: ';' expected
-              Free Memory:    """ + (rt.freeMemory() / (1024 * 1024)) + """ MB
-                                                                    ^
-src/dunos/apps/SystemInfoApp.java:53: error: illegal text block open delimiter sequence, missing line terminator
-              Free Memory:    """ + (rt.freeMemory() / (1024 * 1024)) + """ MB
-                                                                            ^
-src/dunos/apps/SystemInfoApp.java:54: error: ';' expected
-              Max Memory:     """ + (rt.maxMemory() / (1024 * 1024)) + """ MB
-                 ^
-src/dunos/apps/SystemInfoApp.java:54: error: illegal text block open delimiter sequence, missing line terminator
-              Max Memory:     """ + (rt.maxMemory() / (1024 * 1024)) + """ MB
-                                  ^
-src/dunos/apps/SystemInfoApp.java:54: error: not a statement
-              Max Memory:     """ + (rt.maxMemory() / (1024 * 1024)) + """ MB
-                                                    ^
-src/dunos/apps/SystemInfoApp.java:54: error: ';' expected
-              Max Memory:     """ + (rt.maxMemory() / (1024 * 1024)) + """ MB
-                                                                   ^
-src/dunos/apps/SystemInfoApp.java:54: error: illegal text block open delimiter sequence, missing line terminator
-              Max Memory:     """ + (rt.maxMemory() / (1024 * 1024)) + """ MB
-                                                                           ^
-src/dunos/apps/SystemInfoApp.java:56: error: ';' expected
-            Java:
-                ^
-src/dunos/apps/SystemInfoApp.java:57: error: illegal text block open delimiter sequence, missing line terminator
-              Version:        """ + System.getProperty("java.version", "N/A") + """
-                                  ^
-src/dunos/apps/SystemInfoApp.java:64: error: not a statement
-              Working Dir:    """ + System.getProperty("user.dir", "N/A") + """
-                                                                          ^
-48 errors
+  both class java.util.Timer in java.util and class javax.swing.Timer in javax.swing match
+Note: src/dunos/apps/BrowserApp.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+77 errors
 Exit code: 1
