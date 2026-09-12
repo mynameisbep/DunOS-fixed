@@ -21,7 +21,7 @@ import java.awt.*;
  * - Launching the desktop environment
  * 
  * Usage:
- *   javac -d out src/dunos/**/*.java
+ *   javac -d out src/dunos/Main.java src/dunos/core/*.java src/dunos/ui/*.java src/dunos/system/*.java src/dunos/util/*.java src/dunos/apps/*.java
  *   java -cp out dunos.Main
  */
 public class Main {

@@ -214,14 +214,12 @@ public class BrowserApp {
     }
 
     private String buildErrorPage(String url, String error) {
-        return """
-            <html><body style='background:#1c1c1c; color:#e0e0e0; font-family:sans-serif; padding:40px;'>
-            <h2 style='color:#ff5555;'>⚠ Page could not be loaded</h2>
-            <p style='color:#888;'>URL: """ + url + """</p>
-            <p style='color:#666;'>Error: """ + error + """</p>
-            <p><a href='#' style='color:#0078D4;'>Try again</a></p>
-            </body></html>
-            """;
+        return "<html><body style='background:#1c1c1c; color:#e0e0e0; font-family:sans-serif; padding:40px;'>\n" +
+            "<h2 style='color:#ff5555;'>⚠ Page could not be loaded</h2>\n" +
+            "<p style='color:#888;'>URL: " + url + "</p>\n" +
+            "<p style='color:#666;'>Error: " + error + "</p>\n" +
+            "<p><a href='#' style='color:#0078D4;'>Try again</a></p>\n" +
+            "</body></html>\n";
     }
 
     private String getPageTitle(String url) {

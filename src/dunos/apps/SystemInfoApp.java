@@ -37,43 +37,35 @@ public class SystemInfoApp {
 
     private String buildSystemInfo() {
         Runtime rt = Runtime.getRuntime();
-        return """
-            ╔═══════════════════════════════════════╗
-            ║        DunDunDunOS System Info        ║
-            ╚═══════════════════════════════════════╝
-
-            Operating System:
-              OS Name:        DunDunDunOS v1.0
-              Kernel:         DunOS Kernel 1.0
-              Architecture:   64-bit (Simulated)
-
-            Hardware:
-              Processors:     """ + rt.availableProcessors() + """
-              Total Memory:   """ + (rt.totalMemory() / (1024 * 1024)) + """ MB
-              Free Memory:    """ + (rt.freeMemory() / (1024 * 1024)) + """ MB
-              Max Memory:     """ + (rt.maxMemory() / (1024 * 1024)) + """ MB
-
-            Java:
-              Version:        """ + System.getProperty("java.version", "N/A") + """
-              Vendor:         """ + System.getProperty("java.vendor", "N/A") + """
-              Home:           """ + System.getProperty("java.home", "N/A") + """
-
-            System:
-              User:           """ + System.getProperty("user.name", "N/A") + """
-              OS:             """ + System.getProperty("os.name", "N/A") + """
-              Working Dir:    """ + System.getProperty("user.dir", "N/A") + """
-
-            DunOS Services:
-              Kernel          [Running]
-              Registry        [Running]
-              Event Bus       [Running]
-              Theme Manager   [Running]
-              File System     [Running]
-              Window Manager  [Running]
-              Desktop         [Running]
-
-            Build: 2024.1
-            """;
+        return "╔═══════════════════════════════════════╗\n" +
+            "║        DunDunDunOS System Info        ║\n" +
+            "╚═══════════════════════════════════════╝\n\n" +
+            "Operating System:\n" +
+            "  OS Name:        DunDunDunOS v1.0\n" +
+            "  Kernel:         DunOS Kernel 1.0\n" +
+            "  Architecture:   64-bit (Simulated)\n\n" +
+            "Hardware:\n" +
+            "  Processors:     " + rt.availableProcessors() + "\n" +
+            "  Total Memory:   " + (rt.totalMemory() / (1024 * 1024)) + " MB\n" +
+            "  Free Memory:    " + (rt.freeMemory() / (1024 * 1024)) + " MB\n" +
+            "  Max Memory:     " + (rt.maxMemory() / (1024 * 1024)) + " MB\n\n" +
+            "Java:\n" +
+            "  Version:        " + System.getProperty("java.version", "N/A") + "\n" +
+            "  Vendor:         " + System.getProperty("java.vendor", "N/A") + "\n" +
+            "  Home:           " + System.getProperty("java.home", "N/A") + "\n\n" +
+            "System:\n" +
+            "  User:           " + System.getProperty("user.name", "N/A") + "\n" +
+            "  OS:             " + System.getProperty("os.name", "N/A") + "\n" +
+            "  Working Dir:    " + System.getProperty("user.dir", "N/A") + "\n\n" +
+            "DunOS Services:\n" +
+            "  Kernel          [Running]\n" +
+            "  Registry        [Running]\n" +
+            "  Event Bus       [Running]\n" +
+            "  Theme Manager   [Running]\n" +
+            "  File System     [Running]\n" +
+            "  Window Manager  [Running]\n" +
+            "  Desktop         [Running]\n\n" +
+            "Build: 2024.1\n";
     }
 }
 
