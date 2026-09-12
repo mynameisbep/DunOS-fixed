@@ -11,7 +11,7 @@ import java.awt.*;
 public class BootSequence extends JWindow {
 
     private final JTextPane bootText;
-    private final javax.swing.Timer typeTimer;
+    private javax.swing.Timer typeTimer;
     private final String[] bootMessages;
     private int currentMessage;
     private int currentChar;
@@ -93,7 +93,7 @@ public class BootSequence extends JWindow {
                     updateText();
                 }
             } else {
-                typeTimer.stop();
+                ((javax.swing.Timer) e.getSource()).stop();
                 if (onComplete != null) {
                     javax.swing.Timer delay = new javax.swing.Timer(500, ev -> {
                         onComplete.run();
